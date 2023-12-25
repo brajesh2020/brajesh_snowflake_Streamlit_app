@@ -1,7 +1,8 @@
 import streamlit
 streamlit.title('My Parents New Healthy Diner')
-import snowflake.connector
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+--import snowflake.connector
+import snowflake-connector-python.connector
+my_cnx = snowflake-connector-python.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(),CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
